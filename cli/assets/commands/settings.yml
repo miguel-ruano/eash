@@ -1,0 +1,40 @@
+command: settings
+type: group
+help: Configuraciones del ambiente
+commands:
+  - command: get-bundler
+    help: obtencion del directorio de bundlers
+    showStepsLog: false
+    steps:
+      - type: eval
+        eval: SETTINGS['bundlers']
+        emptyMessage: Sin Valor...
+  - command: get-commands
+    help: obtencion del directorio de commands
+    showStepsLog: false
+    steps:
+      - type: eval
+        eval: SETTINGS['commands']
+        emptyMessage: Sin Valor...
+  - command: set-bundler
+    help: modificacion del directorio de bundlers
+    showStepsLog: false
+    arguments:
+      - name: value
+        type: str
+        required: true
+    steps:
+      - type: eval
+        eval: set_settings_bundler(value)
+    endMessage: Configuracion del bundler actualizada
+  - command: set-commands
+    help: modificacion del directorio de commands
+    showStepsLog: false
+    arguments:
+      - name: value
+        type: str
+        required: true
+    steps:
+      - type: eval
+        eval: set_settings_commands(value)
+    endMessage: Configuracion del bundler actualizada
