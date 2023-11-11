@@ -1,4 +1,5 @@
 # Eash CLI
+easy way to share your commands
 
 ## Requisitos
 
